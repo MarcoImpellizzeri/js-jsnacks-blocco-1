@@ -16,17 +16,33 @@ const lastNameList = ["rossi", "verdi", "bianchi", "banfi", "ferrari", "moretti"
 // lista vuota dove dovrebbero essere creati i nomi casuali dati dai nomi e cognomi
 const randomNameList = [];
 
-// creo una costante che riesca a prendere un nome casuale dall'array "nameList"
-const randomNameI = Math.floor(Math.random() * nameList.length);
-const randomName = nameList[randomNameI];
+for (let i = 0; i < 10; i++) {
+    // creo una costante che riesca a prendere un nome casuale dall'array "nameList"
+    // const randomNameI = Math.floor(Math.random() * nameList.length);
+    // const randomName = nameList[randomNameI];
+    // posso abbreviare le righe di sopra e scriverle in questo modo
+    const randomName = nameList[Math.floor(Math.random() * nameList.length)];
 
-// creo una costante che riesca a prendere un nome casuale dall'array "lastNameList"
-const randomlastNameI = Math.floor(Math.random() * lastNameList.length);
-const randomLastName = lastNameList[randomlastNameI];
+    // creo una costante che riesca a prendere un nome casuale dall'array "lastNameList"
+    // const randomlastNameI = Math.floor(Math.random() * lastNameList.length);
+    // const randomLastName = lastNameList[randomlastNameI];
+    // posso abbreviare le righe di sopra e scriverle in questo modo
+    const randomLastName = lastNameList[Math.floor(Math.random() * lastNameList.length)];
 
-let randomCompleteName = `${randomName} ${randomLastName}`;
+    let randomCompleteName = `${randomName} ${randomLastName}`;
 
-console.log(randomCompleteName);
+    randomNameList.push(randomCompleteName);
+}
 
+console.log(randomNameList)
 
+// considerazioni
+/*
+    ho capito che bisogna inserire all'interno del for queste variabili
 
+    const randomName = nameList[Math.floor(Math.random() * nameList.length)];
+    const randomLastName = lastNameList[Math.floor(Math.random() * lastNameList.length)];
+    let randomCompleteName = `${randomName} ${randomLastName}`;
+
+    perche se le tengo all'esterno mi crea un nome completo soltato una volta e non 10 come io vorrei
+*/
